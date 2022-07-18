@@ -1,8 +1,8 @@
-import { Icountry } from '../types'
+import { ICountry } from '../types'
 import { CountryItem } from './CountryItem';
 
 interface Iprops {
-  countries: Icountry[];
+  countries: ICountry[];
 }
 
 export const CountryList = ({ countries }: Iprops) => {
@@ -10,7 +10,7 @@ export const CountryList = ({ countries }: Iprops) => {
     <ul>
       {countries.map(country => {
         return (
-          <CountryItem key={country.name} />
+          <CountryItem key={country.name} country={country} />
         );
       })}
     </ul>

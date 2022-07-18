@@ -1,12 +1,13 @@
-import React from 'react'
-import { Color } from '../types'
+import { Color, BadgeLabel } from '../types';
 
-interface Iprops {
+interface IBadge {
   color: Color;
+  label: BadgeLabel;
+  value: number;
 }
 
-export const Badge = ({ color }: Iprops) => {
+export const Badge = ({ color, value, label }: IBadge) => {
   return (
-    <div className={`badge bg-${color}`}>Badge</div>
+    <div className={`badge bg-${color} col-2 p-2`}>{`${label}: ${value}`}</div>
   )
 }

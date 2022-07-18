@@ -1,6 +1,6 @@
-export type BadgeLabel = 'area' | 'populatipon';
+export type BadgeLabel = 'area' | 'population';
 
-export interface Icountry {
+export interface ICountry {
     name: string;
     capital: string;
     population: number;
@@ -18,4 +18,13 @@ export enum Color {
     Info = 'info',
     Light = 'light bg-dark',
     Dark = 'dark',
+}
+
+export interface ICountryApi {
+    capital: string[];
+    population: number;
+    region: string;
+    area: number;
+    name: { common: string };
+    flags: { svg: string }
 }
