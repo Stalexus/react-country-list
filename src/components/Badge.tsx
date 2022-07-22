@@ -8,6 +8,6 @@ interface IBadge {
 
 export const Badge = ({ color, value, label }: IBadge) => {
   return (
-    <div className={`badge bg-${color} col-2 p-2`}>{`${label}: ${value}`}</div>
+    <div className={`badge bg-${color} col-2 p-2`}>{label}: {value}</div>
   )
 }

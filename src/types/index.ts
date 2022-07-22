@@ -1,3 +1,5 @@
+import { FlowFlags } from "typescript";
+
 export type BadgeLabel = 'area' | 'population';
 
 export interface ICountry {
@@ -25,6 +27,23 @@ export interface ICountryApi {
     population: number;
     region: string;
     area: number;
-    name: { common: string };
-    flags: { svg: string }
+    name: ICountryNameApi;
+    flags: ICountryFlagsApi;
+}
+
+interface ICountryNameApi {
+    common: string;
+    official: string;
+    nativeName: {
+        [key: string]:
+        | {
+            common: string;
+            official: string;
+        }
+        | undefined;
+    }
+}
+
+interface ICountryFlagsApi {
+    [key: string]: string
 }
